@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>处理各种类型表单</title>
+</head>
+<body>
+    <form method="post" action="" onsubmit="return eg.regCheck();">
+        <input type="hidden" name="" id="errnum" value="0" />
+        账户：<input type="text" name="" id="txtUserId" /><br /><br />
+        密码：<input type="password" name="" id="txtPwd" /><br /><br />
+        确认：<input type="password" name="" id="txtPwd2" /><br /><br />
+        简介：<textarea name=""rows="4" cols="18" id="txtAbout"></textarea><br /><br />
+        <input type="submit" value="注册" id="btnReg" />
+        <input type="button" value="解锁" id="btnUnLock" onclick="eg.unlock();" style="display:none" />
+
+    </form>
+
+    <script type="text/javascript">
+        var eg = {}; //声明一个对象，做命名空间来使用
+        eg.$ = function (id) {
+            return document.getElementById(id);
+        };
+
+        //验证方法
+        eg.regCheck = function () {
+            var uid = eg.$("txtUserId");
+            var pwd = eg.$("txtPwd");
+            var pwd2 = eg.$("txtPwd2");
+            if (uid.value == "") {
+                alert("用户名不能为空！");
+                eg.err();
+                return false;
+            }
+            if (pwd.value == "") {
+                alert("密码不能为空！");
+                eg.err();
+                return false;
+            }
+            if (pwd.value != pwd2.value) {
+                alert("两次输入的密码不同！");
+                eg.err();
+                return false;
+            }
+
+            var about = eg.$("txtAbout");
+            if (about.value.length > 60) {
+                alert("简介长度过长，超过了60个字符！");
+                eg.err();
+                return false;
+            }
+
+            alert("注册成功！");
+            return true;
+        };
+
+        //出错时记录出错次数
+        eg.err = function () {
+            var en = eg.$("errnum");
+            en.value = parseInt(en.value) + 1;
+            eg.lock();
+        };
+
+        //通过错误次数判断是否锁定注册
+        eg.lock = function () {
+            var en = eg.$("errnum");
+            if (parseInt(en.value) > 2) {
+                eg.$("btnReg").disabled = true;
+                eg.$("btnUnLock").style.display = "block";
+            }
+        };
+
+        //解锁
+        eg.unlock = function () {
+            eg.$("btnReg").disabled = false;
+            eg.$("btnUnLock").style.display = "none";
+        }
+    </script>
+</body>
+</html>

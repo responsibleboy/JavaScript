@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>简单固定列宽瀑布流</title>
+    <link href="eg5.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="main">
+        <div class="col"><img src="../images/05/1.jpg" alt="" /><p>[1.jpg]</p></div>
+        <div class="col"><img src="../images/05/2.jpg" alt="" /><p>[2.jpg]</p></div>
+        <div class="col"><img src="../images/05/3.jpg" alt="" /><p>[3.jpg]</p></div>
+        <div class="col"><img src="../images/05/4.jpg" alt="" /><p>[4.jpg]</p></div>
+    </div>
+
+    <script src="../Scripts/eg/eg.base.js"></script>
+    <script src="eg5.js"></script>
+    <script type="text/javascript">
+        eg.getColMin();
+        eg.add(eg.getDataList(5, 35));
+        eg.scroll();
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>延迟加载图片</title>
+    <style>
+        div{float:left;min-width:150px;min-height:150px}
+    </style>
+</head>
+<body>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/1.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/2.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/3.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/4.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/5.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/6.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/7.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/8.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/9.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/10.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/11.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/12.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/13.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/14.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/15.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/16.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/17.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/18.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/19.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/20.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/21.jpg" alt="" /></div>
+    <div><img src="../images/05/loading.gif" lazy-src="../images/05/22.jpg" alt="" /></div>
+
+    <script src="../Scripts/eg/eg.base.js"></script>
+    <script src="eg5.js"></script>
+    <script type="text/javascript">
+        eg.lazy();
+        window.onscroll = function () {
+            eg.lazy();
+        }
+    </script>
+</body>
+</html>

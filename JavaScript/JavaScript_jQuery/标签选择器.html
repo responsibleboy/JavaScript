@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>标签选择器</title>
+    <script src="../Scripts/jquery-1.8.2.js"></script>
+    <script type="text/javascript">
+        function testTag() {
+            var p = $("p");
+            alert(p.get(0).innerHTML);
+            alert(p.get(1).innerHTML);
+        }
+    </script>
+
+</head>
+<body>
+    <p>aa</p>
+    <p>bb</p>
+    <input type="button" value="test" onclick="testTag();" />
+
+</body>
+</html>

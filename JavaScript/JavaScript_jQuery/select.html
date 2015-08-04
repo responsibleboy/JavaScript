@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>select</title>
+    <script type="text/javascript">
+        var c = {
+            xz: ["请选择"],
+            china: ["北京", "上海", "天津", "石家庄"],
+            usa: ["纽约", "华盛顿", "波特兰"],
+            mg: ["东京", "北海道", "大阪"]
+        };
+
+        function selectCity() {
+            //从父select中取值
+            var sel = document.getElementById("contry");
+            var op = sel.options[sel.selectedIndex];
+            var cityArr = c[op.value];				//通过国家的名字获得城市数组
+            //把父select中取到的值放入子select
+            var city = document.getElementById("city");
+            
+            for (var i = 0; i < cityArr.length; i++) {
+                var ops = new Option();		//1创建一个option对象
+                ops.text = cityArr[i];		//2将城市的值赋值给option对象的text属性
+                city.options[i] = ops;		//3将对象赋值给id为“city”的select对象属性options
+            }
+        }
+    </script>
+
+</head>
+<body>
+    国家：
+    <select id="contry" name="contry" onchange="selectCity();">
+        <option value="xz">请选择</option>
+        <option value="china">中国</option>
+        <option value="usa">美国</option>
+        <option value="mg">蒙古</option>
+    </select>
+    <select id="city" name="city">
+        <option>请选择</option>
+    </select>
+</body>
+
+</html>

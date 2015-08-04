@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>value和nodeValue和text</title>
+    <script type="text/javascript">
+        function selectCity() {
+            var sel = document.getElementById("contry");
+            alert(sel.options[0].firstChild.nodeValue); //"请选择"
+            alert(sel.options[0].value); //"xz"
+            alert(sel.options[0].text); // "请选择"
+        }
+    </script>
+
+</head>
+<body>
+    国家：
+    <select id="contry" name="contry" onchange="selectCity();">
+        <option value="xz">请选择</option>
+        <option value="china">中国</option>
+        <option value="usa">美国</option>
+        <option value="mg">俄罗斯</option>
+    </select>
+    <select name="contry">
+        <option>请选择</option>
+    </select>
+</body>
+
+</html>

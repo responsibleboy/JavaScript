@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="../Scripts/jquery-1.8.2.js"></script>
+    <script type="text/javascript">
+        //按这样写，用法是在onload事件触发时调用此函数中的内容
+        $(function () {
+            $("div").click(function () {
+                alert("xxxx");
+                $("div").trigger("click");	   //我触发一次单击事件后，自动触发事件
+            });
+        })
+    </script>
+
+</head>
+<body>
+    <div style="border:solid 1px red;width:100px;height:100px">ccc</div>
+</body>
+</html>

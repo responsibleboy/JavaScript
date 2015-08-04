@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>this</title>
+    <script src="../Scripts/jquery-1.8.2.js"></script>
+    <script type="text/javascript">
+        function btnTestClick(tag) {
+            var id = tag.id;
+            if (id == "btnTest1") {
+                alert($("#txt1").val());
+            } else {
+                alert($("#txt2").val());
+            }
+        }
+    </script>
+</head>
+<body>
+    1.<input type="text" id="txt1" />
+    <br /><br />
+    2.<input type="text" id="txt2" />
+    <br /><br />
+    <input type="button" id="btnTest1" value="Click1" onclick="btnTestClick(this)"/>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="button" id="btnTest2" value="Click2" onclick="btnTestClick(this)" />
+</body>
+</html>

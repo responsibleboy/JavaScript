@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>直接派生选择器</title>
+    <script src="../Scripts/jquery-1.8.2.js"></script>
+    <script type="text/javascript">
+        function testTag() {
+            var jqueryli = $("ul li");
+            jqueryli.css("color", "red");
+        }
+        function testTag2() {
+            var jqueryli = $("ul>li");
+            jqueryli.css("color", "red");
+        }
+    </script>
+
+</head>
+<body>
+    <ul>
+        <li>111</li>
+        <ol>
+            <li>222-1</li>
+            <li>222-2</li>
+        </ol>
+        <ol>
+            <li>222-3</li>
+            <li>222-4</li>
+        </ol>
+        <li>333</li>
+    </ul>
+
+    <ul>
+        <li>444</li>
+        <ol>
+            <li>555</li>
+        </ol>
+        <li>666</li>
+    </ul>
+    <input type="button" value="test" onclick="testTag2();" />
+</body>
+</html>
