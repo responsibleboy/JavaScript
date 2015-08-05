@@ -10,5 +10,51 @@
     </div>
 
     <script src="../Scripts/eg/eg.base.js"></script>
+    <script type="text/javascript">
+        var dic = {
+            "0": { pid: -1, cn: "本书目录", url: "/" }
+            , "1": { pid: 0, cn: "第 1 章 JavaScript概述", url: "/01" }
+            , "11": { pid: 1, cn: "1.1 认识JavaScript", url: "#" }
+            , "12": { pid: 1, cn: "1.2 配置JavaScript开发环境", url: "#" }
+            , "2": { pid: 0, cn: "第 2 章 用JavaScript验证表单", url: "/02" }
+            , "21": { pid: 2, cn: "2.1 最简单的表单验证 - 禁止空白的必填项目", url: "#" }
+            , "22": { pid: 2, cn: "2.2 处理各种类型的表单元素", url: "#" }
+            , "23": { pid: 2, cn: "2.3 用正则表达式校验复杂的格式要求", url: "#" }
+            , "24": { pid: 2, cn: "2.4 改善用户体验", url: "#" }
+            , "3": { pid: 0, cn: "第 3 章 JavaScript实现的照片展示", url: "/03" }
+            , "31": { pid: 3, cn: "3.1 功能设计", url: "#" }
+            , "32": { pid: 3, cn: "3.2 照片加载与定位", url: "#" }
+            , "33": { pid: 3, cn: "3.3 响应鼠标动作", url: "#" }
+        };
+        for (var i in dic) {
+            if (dic[i].pid != undefined) {
+                var pid = dic[i].pid;
+                if (dic[pid]) { //父类存在
+                    dic[pid].child || (dic[pid].child = []); //判断父类是否有child，无则初始化
+                    dic[pid].child.push(i);
+                }
+            }
+        }
+        var z3fTree = function (el, pid) {
+            var ul = document.createElement("ul");
+            for (var i in dic) {
+                if (dic[i].pid == pid) {
+                    var li = document.createElement("li");
+                    li.innerHTML = '<a href="' + dic[i].url + '">' + dic[i].cn + '</a>';
+
+                    if (dic[i].child && dic[i].child.length > 0) {
+                        z3fTree(li, i.toString()); //递归
+                    }
+
+                    ul.appendChild(li);
+                } else {
+                    continue;
+                }
+            }
+            el.appendChild(ul);
+        };
+
+        z3fTree(eg.$("mytree"), -1);
+    </script>
 </body>
 </html>
