@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>文本域高度的变化</title>
+    <script src="../Scripts/jquery-1.8.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var $comment = $("#comment");
+            $(".bigger").click(function () {
+                if (!$comment.is(":animated")) { //是否处于动画状态
+                    if ($comment.height() < 500) {
+                        $comment.animate({ height: "+=50" }, 400);
+                    }
+                }
+            });
+            $(".smaller").click(function () {
+                if (!$comment.is(":animated")) { //是否处于动画状态
+                    if ($comment.height() > 200) {
+                        $comment.animate({ height: "-=50" }, 400);
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <div class="msg">
+            <div class="msg_caption">
+                <span class="bigger">增加高度(+)</span>
+                <span class="smaller">减小高度(+)</span>
+            </div>
+            <textarea id="comment" rows="8" cols="25" style="width:650px">
+                在线文本编辑器，在线文本编辑器，在线文本编辑器，在线文本编辑器。
+                在线文本编辑器，在线文本编辑器，在线文本编辑器，在线文本编辑器。
+                在线文本编辑器，在线文本编辑器，在线文本编辑器，在线文本编辑器。
+                在线文本编辑器，在线文本编辑器，在线文本编辑器，在线文本编辑器。
+            </textarea>
+        </div>
+    </form>
+</body>
+</html>

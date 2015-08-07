@@ -67,6 +67,9 @@
     <Content Include="05-瀑布流布局\简单固定列宽瀑布流.html" />
     <Content Include="05-瀑布流布局\非固定列宽瀑布流.html" />
     <Content Include="06-目录树视图\目录树视图.html" />
+    <Content Include="18-用动态效果来响应浏览者\图片预览.html" />
+    <Content Include="18-用动态效果来响应浏览者\文本域高度的变化.html" />
+    <Content Include="18-用动态效果来响应浏览者\高级选择器.html" />
     <Content Include="images\03\CSS-Hack.jpg" />
     <Content Include="images\03\icon_next.jpg" />
     <Content Include="images\03\icon_next2.jpg" />
@@ -154,6 +157,14 @@
     <Content Include="images\06\plusbottom.gif" />
     <Content Include="images\06\question.gif" />
     <Content Include="images\06\trash.gif" />
+    <Content Include="images\18\apple_1.jpg" />
+    <Content Include="images\18\apple_1_bigger.jpg" />
+    <Content Include="images\18\apple_2.jpg" />
+    <Content Include="images\18\apple_2_bigger.jpg" />
+    <Content Include="images\18\apple_3.jpg" />
+    <Content Include="images\18\apple_3_bigger.jpg" />
+    <Content Include="images\18\apple_4.jpg" />
+    <Content Include="images\18\apple_4_bigger.jpg" />
     <Content Include="JavaScript_jQuery\select.html" />
     <Content Include="JavaScript_jQuery\show_hide.html" />
     <Content Include="JavaScript_jQuery\this.html" />
@@ -168,6 +179,8 @@
     <Content Include="Scripts\guid.js" />
     <Content Include="Scripts\jqery.input.emptyText.js" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <Content Include="Scripts\jquery-easyui-1.3.2\changelog.txt" />
@@ -695,6 +708,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
